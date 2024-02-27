@@ -24,5 +24,32 @@ namespace WpfApp12
         {
             InitializeComponent();
         }
+        private void CountButton_Click(object sender, RoutedEventArgs e)
+        {
+            int count = 0;
+            long referenceNumber = 1310438493;
+            string[] numbers = File.ReadAllLines(@"C:\path\to\szamok.txt");
+
+            foreach (string number in numbers)
+            {
+                if (GCD(referenceNumber, long.Parse(number)) == 1)
+                {
+                    count++;
+                }
+            }
+
+            resultTextBox.Text = $"Relatív prím számok száma: {count}";
+        }
+
+        private long GCD(long a, long b)
+        {
+            while (b != 0)
+            {
+                long temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
     }
 }
