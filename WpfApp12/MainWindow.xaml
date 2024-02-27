@@ -7,7 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="szamolGomb" Content="Számold ki" VerticalAlignment="Top" Click="szamolGomb_Click"/>
-        <TextBox x:Name="eredmenyTextBox" VerticalAlignment="Center" IsReadOnly="True"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="1" x:Name="eredmenyTextBox" Height="50px"></TextBox>
+        <Button Grid.Row="0" Margin="50px" x:Name="szamolGomb" Content="Számold ki" Click="szamolGomb_Click" Width="60px" Height="20px">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
