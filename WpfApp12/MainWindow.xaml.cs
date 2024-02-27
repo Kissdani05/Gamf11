@@ -33,7 +33,7 @@ namespace WpfApp12
 
             foreach (string number in numbers)
             {
-                if (GCD(referenceNumber, long.Parse(number)) == 1)
+                if (LNKO(referenceNumber, long.Parse(number)) == 1)
                 {
                     count++;
                 }
@@ -42,7 +42,7 @@ namespace WpfApp12
             resultTextBox.Text = $"Relatív prím számok száma: {count}";
         }
 
-        private long GCD(long a, long b)
+        private long LNKO(long a, long b)
         {
             while (b != 0)
             {
