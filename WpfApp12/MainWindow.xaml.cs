@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace WpfApp12
         {
             int count = 0;
             long referenceNumber = 1310438493;
-            string[] numbers = File.ReadAllLines(@"C:\path\to\szamok.txt");
+            string[] numbers = File.ReadAllLines("szamok.txt");
 
             foreach (string number in numbers)
             {
