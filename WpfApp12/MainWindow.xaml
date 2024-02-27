@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
@@ -18,7 +18,23 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <TextBox Grid.Row="1" x:Name="eredmenyTextBox" Height="50px"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="anagrammaTextBox" Height="50px" IsReadOnly="True" />
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="leggyakoribbTextBox" Height="50px" IsReadOnly="True" />
         <Button Grid.Row="0" Margin="50px" x:Name="szamolGomb" Content="Számold ki" Click="szamolGomb_Click" Width="60px" Height="20px">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Column="1" x:Name="anagrammaGomb" Content="Anagramma Számolás" Click="btnAnagrammaSzamolas_Click" Width="125px" Height="20px">
+            <Button.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="3"></Setter>
+            </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Column="2" x:Name="LeggyakoribbKetGomb" Content="Leggyakoribb Kétjegyű Szám" Click="btnLeggyakoribbKetjegyuSzam_Click" Width="160px" Height="20px" >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="3"></Setter>
@@ -27,3 +43,4 @@
         </Button>
     </Grid>
 </Window>
+

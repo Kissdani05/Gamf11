@@ -100,7 +100,7 @@ namespace WpfApp12
             }
 
             var leggyakoribb = szamParok.OrderByDescending(x => x.Value).First();
-            leggyakoribbTextBox.Text = $"Leggyakoribb kétjegyű szám: {leggyakoribb.Key}, előfordulása: {leggyakoribb.Value}";
+            leggyakoribbTextBox.Text = $"Leggyakoribb kétjegyű szám: {leggyakoribb.Key}, \n előfordulása: {leggyakoribb.Value}";
         }
 
     }
