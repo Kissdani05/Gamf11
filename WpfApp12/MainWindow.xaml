@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="countButton" Content="Számold ki" VerticalAlignment="Top" Click="CountButton_Click"/>
-        <TextBox x:Name="resultTextBox" VerticalAlignment="Center" IsReadOnly="True"/>
+        <Button x:Name="szamolGomb" Content="Számold ki" VerticalAlignment="Top" Click="szamolGomb_Click"/>
+        <TextBox x:Name="eredmenyTextBox" VerticalAlignment="Center" IsReadOnly="True"/>
     </Grid>
 </Window>

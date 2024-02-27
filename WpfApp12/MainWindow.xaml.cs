@@ -25,24 +25,24 @@ namespace WpfApp12
         {
             InitializeComponent();
         }
-        private void CountButton_Click(object sender, RoutedEventArgs e)
+        private void szamolGomb_Click(object sender, RoutedEventArgs e)
         {
-            int count = 0;
-            long referenceNumber = 1310438493;
-            string[] numbers = File.ReadAllLines("szamok.txt");
+            int szamol = 0;
+            long peldaSzam = 1310438493;
+            string[] szamok = File.ReadAllLines("szamok.txt");
 
-            foreach (string number in numbers)
+            foreach (string szam in szamok)
             {
-                if (LNKO(referenceNumber, long.Parse(number)) == 1)
+                if (legnagyobbKozosTobbszor(peldaSzam, long.Parse(szam)) == 1)
                 {
-                    count++;
+                    szamol++;
                 }
             }
 
-            resultTextBox.Text = $"Relatív prím számok száma: {count}";
+            eredmenyTextBox.Text = $"Relatív prím számok száma: {szamol}";
         }
 
-        private long LNKO(long a, long b)
+        private long legnagyobbKozosTobbszor(long a, long b)
         {
             while (b != 0)
             {
