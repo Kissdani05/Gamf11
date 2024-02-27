@@ -40,6 +40,7 @@ namespace WpfApp12
             }
 
             eredmenyTextBox.Text = $"Relatív prím számok száma: {szamol}";
+            
         }
 
         private long legnagyobbKozosTobbszor(long a, long b)
@@ -52,5 +53,55 @@ namespace WpfApp12
             }
             return a;
         }
+        private void btnAnagrammaSzamolas_Click(object sender, RoutedEventArgs e)
+        {
+            anagrammaSzamolas();
+        }
+
+        private void btnLeggyakoribbKetjegyuSzam_Click(object sender, RoutedEventArgs e)
+        {
+            leggyakoribbKetjegyuSzam();
+        }
+        private void anagrammaSzamolas()
+        {
+            string mintaSzam = "2354211341";
+            string rendezettMinta = String.Concat(mintaSzam.OrderBy(c => c));
+            string[] szamok = File.ReadAllLines("szamok.txt");
+            HashSet<string> egyediAnagrammak = new HashSet<string>();
+
+            foreach (string szam in szamok)
+            {
+                if (String.Concat(szam.OrderBy(c => c)) == rendezettMinta && szam != mintaSzam)
+                {
+                    egyediAnagrammak.Add(szam);
+                }
+            }
+            anagrammaTextBox.Text = $"Egyedi anagrammák száma: {egyediAnagrammak.Count}";
+        }
+        private void leggyakoribbKetjegyuSzam()
+        {
+            string[] szamok = File.ReadAllLines("szamok.txt");
+            Dictionary<string, int> szamParok = new Dictionary<string, int>();
+
+            foreach (string szam in szamok)
+            {
+                for (int i = 0; i < szam.Length - 1; i++)
+                {
+                    string par = szam.Substring(i, 2);
+                    if (szamParok.ContainsKey(par))
+                    {
+                        szamParok[par]++;
+                    }
+                    else
+                    {
+                        szamParok.Add(par, 1);
+                    }
+                }
+            }
+
+            var leggyakoribb = szamParok.OrderByDescending(x => x.Value).First();
+            leggyakoribbTextBox.Text = $"Leggyakoribb kétjegyű szám: {leggyakoribb.Key}, előfordulása: {leggyakoribb.Value}";
+        }
+
     }
 }

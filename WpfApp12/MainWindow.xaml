@@ -9,5 +9,9 @@
     <Grid>
         <Button x:Name="szamolGomb" Content="Számold ki" VerticalAlignment="Top" Click="szamolGomb_Click"/>
         <TextBox x:Name="eredmenyTextBox" VerticalAlignment="Center" IsReadOnly="True"/>
+        <Button x:Name="anagrammaGomb" Content="Anagramma Számolás" Click="btnAnagrammaSzamolas_Click" Margin="0,39,614,307" />
+        <Button x:Name="LeggyakoribbKetGomb" Content="Leggyakoribb Kétjegyű Szám" Click="btnLeggyakoribbKetjegyuSzam_Click" Margin="223,44,371,313"/>
+        <TextBox x:Name="anagrammaTextBox" VerticalAlignment="Top" IsReadOnly="True" Margin="0,267,0,0"/>
+        <TextBox x:Name="leggyakoribbTextBox" VerticalAlignment="Top" IsReadOnly="True" Margin="0,244,0,0"/>
     </Grid>
 </Window>
